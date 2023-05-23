@@ -17,6 +17,9 @@
 		88E54A5229B5475400252D99 /* MetaEnumMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E54A5129B5475400252D99 /* MetaEnumMacro.swift */; };
 		88E54A5429B5520A00252D99 /* MetaEnumMacroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E54A5329B5520A00252D99 /* MetaEnumMacroTests.swift */; };
 		911F5F8829BB5A150081AF9C /* URLMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911F5F8729BB5A150081AF9C /* URLMacro.swift */; };
+		B66E4FF52A188BB00000CC5F /* InjectableMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66E4FF42A188BB00000CC5F /* InjectableMacro.swift */; };
+		B69583402A1A0153000023BE /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B695833F2A1A0153000023BE /* main.swift */; };
+		B69583442A1A016E000023BE /* libMacroExamplesLib.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8A3126294947A100E83EB9 /* libMacroExamplesLib.dylib */; };
 		BD2CDEE9298B24040015A701 /* Diagnostics.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2CDEE8298B24040015A701 /* Diagnostics.swift */; };
 		BD2CDEEB298B34730015A701 /* WrapStoredPropertiesMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2CDEEA298B34730015A701 /* WrapStoredPropertiesMacro.swift */; };
 		BD2CDEED298B4A650015A701 /* DictionaryIndirectionMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2CDEEC298B4A650015A701 /* DictionaryIndirectionMacro.swift */; };
@@ -35,6 +38,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		B69583462A1A016E000023BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BDF5AFD82947E5B000FA119B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BD8A3125294947A100E83EB9;
+			remoteInfo = MacroExamplesLib;
+		};
+		B69583492A1A0178000023BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BDF5AFD82947E5B000FA119B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BDF5AFED2947E61100FA119B;
+			remoteInfo = MacroExamplesPlugin;
+		};
 		BD8A31322949480C00E83EB9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BDF5AFD82947E5B000FA119B /* Project object */;
@@ -66,6 +83,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		B695833B2A1A0153000023BE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		BDF5AFDE2947E5B000FA119B /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -88,6 +114,9 @@
 		88E54A5129B5475400252D99 /* MetaEnumMacro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaEnumMacro.swift; sourceTree = "<group>"; };
 		88E54A5329B5520A00252D99 /* MetaEnumMacroTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaEnumMacroTests.swift; sourceTree = "<group>"; };
 		911F5F8729BB5A150081AF9C /* URLMacro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLMacro.swift; sourceTree = "<group>"; };
+		B66E4FF42A188BB00000CC5F /* InjectableMacro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectableMacro.swift; sourceTree = "<group>"; };
+		B695833D2A1A0153000023BE /* DependencyInjection */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DependencyInjection; sourceTree = BUILT_PRODUCTS_DIR; };
+		B695833F2A1A0153000023BE /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		BD2CDEE8298B24040015A701 /* Diagnostics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diagnostics.swift; sourceTree = "<group>"; };
 		BD2CDEEA298B34730015A701 /* WrapStoredPropertiesMacro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrapStoredPropertiesMacro.swift; sourceTree = "<group>"; };
 		BD2CDEEC298B4A650015A701 /* DictionaryIndirectionMacro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryIndirectionMacro.swift; sourceTree = "<group>"; };
@@ -109,6 +138,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B695833A2A1A0153000023BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B69583442A1A016E000023BE /* libMacroExamplesLib.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BD8A3124294947A100E83EB9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -142,6 +179,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B695833E2A1A0153000023BE /* DependencyInjection */ = {
+			isa = PBXGroup;
+			children = (
+				B695833F2A1A0153000023BE /* main.swift */,
+			);
+			path = DependencyInjection;
+			sourceTree = "<group>";
+		};
 		BD841F80294CE14500DA4D81 /* MacroExamplesPlugin */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +207,7 @@
 				1D682A95299E3313006F9F78 /* CustomCodable.swift */,
 				BD48319229AFF87200F3123A /* OptionSetMacro.swift */,
 				88E54A5129B5475400252D99 /* MetaEnumMacro.swift */,
+				B66E4FF42A188BB00000CC5F /* InjectableMacro.swift */,
 			);
 			path = MacroExamplesPlugin;
 			sourceTree = "<group>";
@@ -183,6 +229,7 @@
 				BDF5AFE22947E5B000FA119B /* MacroExamples */,
 				BDFB14B32948484000708DA6 /* MacroExamplesPluginTest */,
 				BD8A3127294947A100E83EB9 /* MacroExamplesLib */,
+				B695833E2A1A0153000023BE /* DependencyInjection */,
 				BDF5AFE12947E5B000FA119B /* Products */,
 				BDF5B0162947FE1A00FA119B /* Frameworks */,
 			);
@@ -196,6 +243,7 @@
 				BDF5AFEE2947E61100FA119B /* libMacroExamplesPlugin.dylib */,
 				BDFB14B22948484000708DA6 /* MacroExamplesPluginTest.xctest */,
 				BD8A3126294947A100E83EB9 /* libMacroExamplesLib.dylib */,
+				B695833D2A1A0153000023BE /* DependencyInjection */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -245,6 +293,25 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		B695833C2A1A0153000023BE /* DependencyInjection */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B69583412A1A0153000023BE /* Build configuration list for PBXNativeTarget "DependencyInjection" */;
+			buildPhases = (
+				B69583392A1A0153000023BE /* Sources */,
+				B695833A2A1A0153000023BE /* Frameworks */,
+				B695833B2A1A0153000023BE /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B695834A2A1A0178000023BE /* PBXTargetDependency */,
+				B69583472A1A016E000023BE /* PBXTargetDependency */,
+			);
+			name = DependencyInjection;
+			productName = DependencyInjection;
+			productReference = B695833D2A1A0153000023BE /* DependencyInjection */;
+			productType = "com.apple.product-type.tool";
+		};
 		BD8A3125294947A100E83EB9 /* MacroExamplesLib */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BD8A312C294947A100E83EB9 /* Build configuration list for PBXNativeTarget "MacroExamplesLib" */;
@@ -331,6 +398,9 @@
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					B695833C2A1A0153000023BE = {
+						CreatedOnToolsVersion = 14.3;
+					};
 					BD8A3125294947A100E83EB9 = {
 						CreatedOnToolsVersion = 14.3;
 						LastSwiftMigration = 1430;
@@ -366,6 +436,7 @@
 				BDF5AFED2947E61100FA119B /* MacroExamplesPlugin */,
 				BDFB14B12948484000708DA6 /* MacroExamplesPluginTest */,
 				BD8A3125294947A100E83EB9 /* MacroExamplesLib */,
+				B695833C2A1A0153000023BE /* DependencyInjection */,
 			);
 		};
 /* End PBXProject section */
@@ -381,6 +452,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B69583392A1A0153000023BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B69583402A1A0153000023BE /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BD8A3123294947A100E83EB9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -414,6 +493,7 @@
 				BD2CDEE9298B24040015A701 /* Diagnostics.swift in Sources */,
 				1D682A96299E3313006F9F78 /* CustomCodable.swift in Sources */,
 				BD2CDEED298B4A650015A701 /* DictionaryIndirectionMacro.swift in Sources */,
+				B66E4FF52A188BB00000CC5F /* InjectableMacro.swift in Sources */,
 				BD752BE7294D461B00D00A2E /* FontLiteralMacro.swift in Sources */,
 				BD7324B829989178009C6A08 /* AddCompletionHandlerMacro.swift in Sources */,
 				BD48319329AFF87200F3123A /* OptionSetMacro.swift in Sources */,
@@ -435,6 +515,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		B69583472A1A016E000023BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BD8A3125294947A100E83EB9 /* MacroExamplesLib */;
+			targetProxy = B69583462A1A016E000023BE /* PBXContainerItemProxy */;
+		};
+		B695834A2A1A0178000023BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BDF5AFED2947E61100FA119B /* MacroExamplesPlugin */;
+			targetProxy = B69583492A1A0178000023BE /* PBXContainerItemProxy */;
+		};
 		BD8A31332949480C00E83EB9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = BD8A3125294947A100E83EB9 /* MacroExamplesLib */;
@@ -461,6 +551,32 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		B69583422A1A0153000023BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E3R68ED529;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				OTHER_SWIFT_FLAGS = "-Xfrontend -enable-experimental-feature -Xfrontend Macros -Xfrontend -load-plugin-library -Xfrontend ${BUILD_DIR}/${CONFIGURATION}/libMacroExamplesPlugin.dylib -Xfrontend -dump-macro-expansions";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		B69583432A1A0153000023BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E3R68ED529;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				OTHER_SWIFT_FLAGS = "-Xfrontend -enable-experimental-feature -Xfrontend Macros -Xfrontend -load-plugin-library -Xfrontend ${BUILD_DIR}/${CONFIGURATION}/libMacroExamplesPlugin.dylib -Xfrontend -dump-macro-expansions";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		BD8A312D294947A100E83EB9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -718,6 +834,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B69583412A1A0153000023BE /* Build configuration list for PBXNativeTarget "DependencyInjection" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B69583422A1A0153000023BE /* Debug */,
+				B69583432A1A0153000023BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		BD8A312C294947A100E83EB9 /* Build configuration list for PBXNativeTarget "MacroExamplesLib" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

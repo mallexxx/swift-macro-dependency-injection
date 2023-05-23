@@ -11,9 +11,9 @@ print(#stringify(x + y))
 
 // "AddBlocker" complains about addition operations. We emit a warning
 // so it doesn't block compilation.
-print(#addBlocker(x * y + z))
+//print(#addBlocker(x * y + z))
 
-#myWarning("remember to pass a string literal here")
+//#myWarning("remember to pass a string literal here")
 
 // Uncomment to get an error out of the macro.
 // let text = "oops"
@@ -41,15 +41,66 @@ struct OldStorage {
   var x: Int
 }
 
+@propertyWrapper
+struct Injected<Value> {
+
+  init() {
+
+  }
+//  init(initialValue: Value) {
+//    self.init(wrappedValue: initialValue)
+//  }
+//
+//  init(wrappedValue: Value) {
+//    subject = CurrentValueSubject(wrappedValue)
+//  }
+
+  private var _wrappedValue: Value?
+//  var wrappedValue: Value {
+//    get {
+//      _wrappedValue!
+//    }
+//    set {
+//      _wrappedValue = newValue
+//    }
+//  }
+
+  var projectedValue: Injected<Value> {
+    return self
+  }
+
+  @available(*, unavailable, message: "@PublishedAfter is only available on properties of classes")
+  var wrappedValue: Value {
+    get { fatalError() }
+    // swiftlint:disable unused_setter_value
+    set { fatalError() }
+    // swiftlint:enable unused_setter_value
+  }
+
+  static subscript<EnclosingSelf: AnyObject>(
+    _enclosingInstance object: EnclosingSelf,
+    wrapped wrappedKeyPath: ReferenceWritableKeyPath<EnclosingSelf, Value>,
+    storage storageKeyPath: ReferenceWritableKeyPath<EnclosingSelf, Injected<Value>>
+  ) -> Value {
+    get {
+      object[keyPath: storageKeyPath]._wrappedValue!
+    }
+    set {
+      object[keyPath: storageKeyPath]._wrappedValue = newValue
+    }
+  }
+
+}
+
 // The deprecation warning below comes from the deprecation attribute
 // introduced by @wrapStoredProperties on OldStorage.
-_ = OldStorage(x: 5).x
+//_ = OldStorage(x: 5).x
 
 // Move the storage from each of the stored properties into a dictionary
 // called `_storage`, turning the stored properties into computed properties.
 @DictionaryStorage
 struct Point {
-  var x: Int = 1
+  var x: Int = 2
   var y: Int = 2
 }
 
@@ -155,7 +206,7 @@ Task {
   let myStruct = MyStruct()
   let a = try? await myStruct.c(a: 5, for: "Test", 20)
   
-  await myStruct.d(a: 10, for: "value", 40)
+//  await myStruct.d(a: 10, for: "value", 40)
 }
 
 MyStruct().f(a: 1, for: "hello", 3.14159) { result in

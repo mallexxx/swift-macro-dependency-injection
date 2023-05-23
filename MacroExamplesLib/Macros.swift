@@ -39,6 +39,20 @@ public protocol ExpressibleByFontLiteral {
 @attached(memberAttribute)
 public macro wrapStoredProperties(_ attributeName: String) = #externalMacro(module: "MacroExamplesPlugin", type: "WrapStoredPropertiesMacro")
 
+@attached(member, names: named(Dependencies), named(DynamicDependencies), named(DependencyProvider), named(DynamicDependencyProvider), named(dependencyProvider), named(_currentDependencies), named(getAllDependencyProviderKeyPaths(from:)), named(makeDependencies), named(make))
+@attached(memberAttribute)
+@attached(peer, names: suffixed(_DependencyProvider), suffixed(_DependencyProvider_allKeyPaths), suffixed(_DynamicDependencyProvider))
+public macro Injectable() = #externalMacro(module: "MacroExamplesPlugin", type: "InjectableMacro")
+
+@attached(accessor)
+public macro Injected() = #externalMacro(module: "MacroExamplesPlugin", type: "InjectedMacro")
+
+//@freestanding(declaration, names: arbitrary)
+//public macro InjectedDependencies(for type: Any.Type) = #externalMacro(module: "MacroExamplesPlugin", type: "InjectedDependenciesMacro")
+@attached(conformance)
+@attached(member, names: arbitrary)
+public macro InjectedDependencies(for type: Any.Type...) = #externalMacro(module: "MacroExamplesPlugin", type: "InjectedDependenciesMacro")
+
 /// Wrap up the stored properties of the given type in a dictionary,
 /// turning them into computed properties.
 ///
@@ -53,6 +67,7 @@ public macro wrapStoredProperties(_ attributeName: String) = #externalMacro(modu
 @attached(member, names: named(_storage))
 @attached(memberAttribute)
 public macro DictionaryStorage() = #externalMacro(module: "MacroExamplesPlugin", type: "DictionaryStorageMacro")
+
 
 public protocol Observable {}
 

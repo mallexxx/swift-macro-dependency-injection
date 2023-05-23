@@ -33,6 +33,12 @@ public struct WrapStoredPropertiesMacro: MemberAttributeMacro {
       throw CustomError.message("macro requires a string literal containing the name of an attribute")
     }
 
+    let ad = AttributeSyntax(
+      attributeName: SimpleTypeIdentifierSyntax(
+        name: .identifier(wrapperName.content.text)
+      )
+    ).description
+
     return [
       AttributeSyntax(
         attributeName: SimpleTypeIdentifierSyntax(

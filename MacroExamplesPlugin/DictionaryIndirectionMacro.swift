@@ -1,7 +1,8 @@
 import SwiftSyntax
 import SwiftSyntaxMacros
 
-public struct DictionaryStorageMacro { }
+public struct DictionaryStorageMacro {
+}
 
 extension DictionaryStorageMacro: AccessorMacro {
   public static func expansion<
